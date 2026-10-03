@@ -1,0 +1,29 @@
+TEACHER STORY
+=============
+
+Teacher Story est un jeu gratuit, distribué sans contrepartie financière.
+
+Il reprend les ressources du jeu original Teacher Story de Motion Twin
+(graphismes, sons, musiques, polices et textes), dont certaines ont été
+converties ou adaptées. Comme ces ressources, il est distribué selon les termes
+de la licence Creative Commons Attribution - Pas d'Utilisation Commerciale -
+Partage dans les Mêmes Conditions 4.0 International (CC BY-NC-SA 4.0) :
+http://creativecommons.org/licenses/by-nc-sa/4.0/
+
+- Attribution : ressources originales © Motion Twin. Texte de licence fourni
+  par les ayants droits : game\assets\LICENSE.txt
+- Pas d'utilisation commerciale : ni le jeu ni ses ressources ne peuvent être
+  vendus ou utilisés à des fins commerciales.
+- Partage dans les mêmes conditions : toute redistribution, modifiée ou non,
+  doit rester sous cette même licence.
+
+Le jeu est distribué sous forme compilée. La licence n'impose pas la
+publication du code source.
+
+La police game\assets\fonts\537_DS-Digital.ttf provient d'un tiers et reste
+soumise à ses propres conditions.
+
+SQLite (sqlite3_x64.dll) est dans le domaine public :
+https://www.sqlite.org/copyright.html
+
+Le jeu est fourni « en l'état », sans garantie d'aucune sorte.
