@@ -14,6 +14,50 @@ Ce dépôt ne contient que les versions publiées du jeu, prêtes à installer.
 
 Configuration requise : Windows 10 ou plus récent, 64 bits.
 
+## Jouer sous Linux (Wine)
+
+Le jeu tourne sous Wine, mais avec la configuration de base de Wine, les textes
+peuvent ne pas s'afficher (écrans sans titres, boutons vides). Pour corriger,
+installez deux composants Windows dans le préfixe Wine du jeu, depuis un
+terminal Linux :
+
+```
+winetricks -q gdiplus corefonts
+```
+
+Ce que fait cette commande :
+
+- `winetricks` télécharge des composants Windows officiels et les installe dans
+  un préfixe Wine (le faux `C:\` où tourne le jeu). Rien n'est installé ailleurs
+  sur votre système ;
+- `-q` installe sans fenêtres ni questions ;
+- `gdiplus` installe la bibliothèque graphique GDI+ de Microsoft et dit à Wine de
+  l'utiliser à la place de la sienne. Le jeu dessine tout avec GDI+, polices
+  comprises : avec la version de Microsoft, il s'affiche comme sous Windows ;
+- `corefonts` installe les polices courantes de Microsoft (Arial, Times New
+  Roman, Verdana...).
+
+Il faut une connexion internet (une vingtaine de Mo). Seul ce préfixe est
+modifié, les autres programmes Wine ne sont pas concernés. Pour revenir en
+arrière, retirez le remplacement `gdiplus` dans `winecfg` (onglet
+Bibliothèques).
+
+Selon la façon dont vous lancez le jeu :
+
+- **Wine en ligne de commande**, préfixe par défaut (`~/.wine`) : la commande
+  telle quelle. Installez `winetricks` au besoin (`sudo apt install winetricks`
+  sur Debian / Ubuntu, `sudo dnf install winetricks` sur Fedora,
+  `sudo pacman -S winetricks` sur Arch) ;
+- **préfixe dédié** : `WINEPREFIX=~/chemin/vers/le/prefixe winetricks -q gdiplus corefonts` ;
+- **Steam / Proton** (jeu ajouté comme « jeu non-Steam ») : repérez son numéro
+  avec `protontricks -l`, puis `protontricks <numéro> -q gdiplus corefonts` ;
+- **Lutris** : clic droit sur le jeu, menu Wine, **Winetricks**, puis installez
+  `gdiplus` (composants Windows) et `corefonts` (polices) ;
+- **Bottles** : bouteille du jeu, **Dependencies**, installez `gdiplus` et
+  `corefonts`.
+
+Relancez ensuite le jeu.
+
 ## Avertissement de Windows au premier lancement
 
 Le jeu n'est pas signé numériquement. Windows peut afficher « Windows a protégé
